@@ -1,0 +1,1 @@
+codeigniter-cli-minion
