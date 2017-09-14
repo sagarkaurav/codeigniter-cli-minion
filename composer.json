@@ -1,0 +1,19 @@
+{
+    "name": "sagarkaurav/codeigniter-cli-minion",
+    "type": "library",
+    "description": "Codeigniter cli minion si a cli tool to help you generate controller and model for your codeingiter 3 projects.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sagar kaurav",
+            "email": "sagar.kaurav@gmail.com"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "Ccm\\": "src"
+        }
+      }
+}
