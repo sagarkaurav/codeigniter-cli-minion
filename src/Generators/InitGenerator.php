@@ -20,7 +20,8 @@ class InitGenerator
     {
       $data = array(
         'controller_path' => 'application/controllers',
-        'model_path' => 'application/models'
+        'model_path' => 'application/models',
+        'view_path' => 'application/views'
       );
       $file_data = Yaml::dump($data);
       file_put_contents($this->file_path,$file_data);

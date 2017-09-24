@@ -31,7 +31,7 @@
       ?>
 
 _EOT;
-    file_exists(!$this->name.'.php');
+    if(!file_exists($this->name.'.php'))
     {
       file_put_contents($this->model_a_path.'/'.$this->name.'.php',$str);
     }
