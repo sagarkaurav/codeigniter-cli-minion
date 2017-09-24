@@ -26,6 +26,11 @@ class InitGenerator
       $file_data = Yaml::dump($data);
       file_put_contents($this->file_path,$file_data);
     }
+    else
+    {
+      throw new \InvalidArgumentException("$this->file_path file is already exists.");
+
+    }
   }
 }
 

@@ -39,9 +39,13 @@ class ControllerGenerator
         ?>
 
 _EOT;
-      if(!file_exists($this->name.'.php'))
+      if(!file_exists($this->controller_a_path.'/'.$this->name.'.php'))
       {
         file_put_contents($this->controller_a_path.'/'.$this->name.'.php',$str);
+      }
+      else
+      {
+        throw new \InvalidArgumentException("The controller $this->name already exists");
       }
     }
 

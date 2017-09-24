@@ -31,7 +31,13 @@ class GenerateControllerCommand extends Command
     {
         $controller_name = $input->getArgument('name');
         $controller_actions = $input->getArgument('actions');
-        $controller_generator = new ControllerGenerator($controller_name,$controller_actions);
+        try{
+          $controller_generator = new ControllerGenerator($controller_name,$controller_actions);
+        }
+        catch(Exception $e)
+        {
+          echo $e;
+        }
         $output->writeln([
           "Controller generated.",
           "$controller_name"

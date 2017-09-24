@@ -17,7 +17,10 @@ class ViewGenerator
         $this->view_path = $data['view_path'];
         if ($controller_name!='')
         {
-          mkdir($this->view_a_path = getcwd().'/'.$this->view_path.'/'.$controller_name);
+          if(!@mkdir($this->view_a_path = getcwd().'/'.$this->view_path.'/'.$controller_name))
+          {
+            throw new \InvalidArgumentException("The views directory $this->view_a_path already exists");
+          }
           $this->view_a_path = getcwd().'/'.$this->view_path.'/'.$controller_name;
         }
         else
@@ -29,6 +32,10 @@ class ViewGenerator
           if (!file_exists($this->view_a_path.'/'.$name.'.php'))
           {
             file_put_contents($this->view_a_path.'/'.$name.'.php','');
+          }
+          else
+          {
+            throw new \InvalidArgumentException("The view file $this->view_a_path/$name.php already exists");
           }
         }
     }

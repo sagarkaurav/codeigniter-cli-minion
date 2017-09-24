@@ -29,7 +29,14 @@ class GenerateViewsCommand extends Command{
     {
         $views_names = $input->getArgument('names');
         $dir = $input->getOption('dir');
-        $view_generator = new ViewGenerator($views_names,$dir);
+        try
+        {
+          $view_generator = new ViewGenerator($views_names,$dir);  
+        }
+        catch (Exception $e)
+        {
+          echo $e;
+        }
     }
 
 }

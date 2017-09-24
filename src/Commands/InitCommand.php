@@ -21,8 +21,15 @@ class InitCommand extends Command
 
   protected function execute(InputInterface $input, OutputInterface $output)
   {
-    $current_path = getcwd();
-    $i = new InitGenerator($current_path);
+    try
+    {
+      $current_path = getcwd();
+      $i = new InitGenerator($current_path);
+    }
+    catch(Exception $e)
+    {
+      echo $e;
+    }
   }
 }
 

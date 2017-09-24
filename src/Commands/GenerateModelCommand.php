@@ -22,16 +22,22 @@ class GenerateModelCommand extends Command{
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $model_name = $input->getArgument('name');
-        $model_generator = new ModelGenerator($model_name);
-        $phinx = new PhinxApplication();
-        $command = $phinx->find('create');
-        $migration_name = "Create".$model_name."Table";
-        $greetInput = new ArrayInput(['name'=>$migration_name]);
-        $returnCode = $command->run($greetInput, $output);
-        $output->writeln([
-          "Model generated.",
-          "$model_name"
-        ]);
+        try
+        {
+          $model_generator = new ModelGenerator($model_name);
+          $phinx = new PhinxApplication();
+          $command = $phinx->find('create');
+          $migration_name = "Create".$model_name."Table";
+          $greetInput = new ArrayInput(['name'=>$migration_name]);
+          $returnCode = $command->run($greetInput, $output);
+          $output->writeln([
+            "Model generated.",
+            "$model_name"
+          ]);
+        }
+        catch (Exception $e) {
+
+        }
     }
 
 }
