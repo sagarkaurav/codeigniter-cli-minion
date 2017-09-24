@@ -9,7 +9,18 @@ Codeigniter cli minion si a cli tool to help you generate controller and model f
 `curl -s https://getcomposer.org/installer | php`
 
 2.) Install Codeigniter cli minion.
-`php composer.phar require-dev sagarkaurav/codeingiter-cli-minion`
+Add following lines inside your `composer.json` file.
+```
+"require-dev": {
+  "sagarkaurav/codeigniter-cli-minion": "@dev"
+},
+
+"repositories": [{
+	"url": "https://github.com/sagarkaurav/codeigniter-cli-minion",
+	"type": "git"
+}]
+```
+
 
 ## Generate configration file
 
