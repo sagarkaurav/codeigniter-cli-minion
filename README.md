@@ -2,7 +2,7 @@
 
 Codeigniter cli minion si a cli tool to help you generate controller and model for your codeingiter 3 projects.
 
-`NOTE: This package is not ready for use yet. still needs some works to be done like writing test and exception handling and refactoring.`
+`NOTE: This package is not ready for use for real project yet. still needs some works to be done like writing test and exception handling and refactoring.`
 ## Installation
 
 1.) Download composer using
