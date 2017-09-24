@@ -1,6 +1,6 @@
 <?php
 namespace Ccm;
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../../../autoload.php';
 
 use Symfony\Component\Console\Application;
 use Ccm\Commands\GenerateControllerCommand;
